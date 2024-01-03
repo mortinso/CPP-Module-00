@@ -5,10 +5,10 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
 OBJ_DIR = .objs
 
-SRCS = Contact.cpp PhoneBook.cpp main.cpp
+SRCS = Contact.cpp PhoneBook.cpp main.cpp utils.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
-HEADERS = Contact.hpp PhoneBook.hpp
+HEADERS = Contact.hpp PhoneBook.hpp utils.hpp
 
 all: $(NAME)
 

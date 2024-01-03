@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 18:38:06 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/03 20:28:05 by mortins-         ###   ########.fr       */
+/*   Created: 2024/01/03 18:39:14 by mortins-          #+#    #+#             */
+/*   Updated: 2024/01/03 20:27:25 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-# include "Contact.hpp"
-# include "utils.hpp"
+# include <iostream>
+# include <cstdlib>
 
-class PhoneBook {
-	private:
-		Contact	contacts[8];
-		int	index;
-
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void addContact(void);
-};
+std::string getInput(const std::string prompt);
+bool	isAllWhitespaces(const std::string str);
+bool	isValidPhoneNumber(const std::string &number);
 
 #endif
