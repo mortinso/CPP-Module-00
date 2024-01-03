@@ -1,7 +1,7 @@
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
-
 NAME = megaphone
+
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 SRCS = megaphone.cpp
 
