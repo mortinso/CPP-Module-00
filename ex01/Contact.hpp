@@ -2,16 +2,19 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <iomanip>
 
 class Contact {
-	public:
-		Contact();
 	private:
-		std::string FirstName;
-		std::string LastName;
-		std::string NickName;
-		int PhoneNumber;
-		std::string DarkestSecret;
+		std::string first_name;
+		std::string last_name;
+		std::string nickame;
+		std::string phone_number;
+		std::string darkest_secret;
+
+	public:
+		Contact(void);
+		~Contact(void);
 };
 
 #endif

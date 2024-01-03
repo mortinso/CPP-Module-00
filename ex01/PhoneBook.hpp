@@ -1,11 +1,15 @@
 #ifndef PHONEBOOK_HPP
-# define CONTACT_HPP
+# define PHONEBOOK_HPP
 
-# include <iostream>
 # include "Contact.hpp"
 
-class PhoneBook: public Contact {
+class PhoneBook {
+	private:
+		Contact	contacts[8];
 
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
 };
 
 #endif
