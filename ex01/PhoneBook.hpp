@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:38:06 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/03 20:28:05 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/03 20:36:46 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class PhoneBook {
 		PhoneBook(void);
 		~PhoneBook(void);
 		void addContact(void);
+		// search function
 };
 
 #endif
