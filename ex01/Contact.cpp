@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/03 20:42:04 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:45:44 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ Contact::~Contact(void) {
 	return ;
 }
 
-std::string Contact::getPhoneNumber(void) {
-	std::string phone_number = "";
+std::string	Contact::getPhoneNumber(void) {
+	std::string phoneNumber = "";
 	bool valid = false;
 	
 	while (!valid)
 	{
-		phone_number = getInput("Phone Number: ");
-		if (isValidPhoneNumber(phone_number))
+		phoneNumber = getInput("Phone Number: ");
+		if (isValidPhoneNumber(phoneNumber))
 			valid = true;
 		else
 			std::cout << "Invalid phone number, try again." << std::endl;
 	}
-	return (phone_number);
+	return (phoneNumber);
 }
 
-void Contact::createContact(void) {
+void	Contact::createContact(void) {
 	std::cin.ignore();
 	std::cout << "Creating Contact, please fill in the following fields:" << std::endl;
 	this->firstName = getInput("First Name: ");
@@ -45,4 +45,29 @@ void Contact::createContact(void) {
 	this->nickame = getInput("Nickname: ");
 	this->phoneNumber = this->getPhoneNumber();
 	this->darkestSecret = getInput("Darkest Secret: ");
+}
+
+std::string	Contact::formatString(std::string str) {
+	if (str.length() > 10)
+		return (str.substr(0,9) + '.');
+	return str;
+}
+
+void	Contact::bookFormat(int index) {
+	if (this->firstName.empty())
+		return ;
+	std::cout << std::setw(10) << index;
+	std::cout << "|" << std::setw(10) << this->formatString(this->firstName);
+	std::cout << "|" << std::setw(10) << this->formatString(this->lastName);
+	std::cout << "|" << std::setw(10) << this->formatString(this->nickame) << std::endl;
+}
+
+void	Contact::displayContact(void) {
+	std::cout << "----------------------------------------" << std::endl;
+	std::cout << "First Name: " << this->firstName << std::endl;
+	std::cout << "Last Name: " << this->lastName << std::endl;
+	std::cout << "Nickname: " << this->nickame << std::endl;
+	std::cout << "Phone Number: " << this->phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
+	std::cout << "----------------------------------------" << std::endl;
 }
