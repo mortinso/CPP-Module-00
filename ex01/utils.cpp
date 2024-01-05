@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:35:15 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/03 20:25:56 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:05:48 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ std::string getInput(const std::string prompt) {
 		else
 		{
 			std::cin.clear();
-			std::cout << "Invalid input, try again." << std::endl;
+			std::cout << "\033[91mInvalid input, try again.\033[39m" << std::endl;
 		}
 	}
 	return (input);

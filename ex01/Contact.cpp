@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/04 18:45:44 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:07:48 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ std::string	Contact::getPhoneNumber(void) {
 	
 	while (!valid)
 	{
-		phoneNumber = getInput("Phone Number: ");
+		phoneNumber = getInput("* Phone Number: ");
 		if (isValidPhoneNumber(phoneNumber))
 			valid = true;
 		else
-			std::cout << "Invalid phone number, try again." << std::endl;
+			std::cout << "\033[91mInvalid phone number, try again.\033[39m" << std::endl;
 	}
 	return (phoneNumber);
 }
 
 void	Contact::createContact(void) {
 	std::cin.ignore();
-	std::cout << "Creating Contact, please fill in the following fields:" << std::endl;
-	this->firstName = getInput("First Name: ");
-	this->lastName = getInput("Last Name: ");
-	this->nickame = getInput("Nickname: ");
+	std::cout << ">> Creating Contact, please fill in the following fields:" << std::endl;
+	this->firstName = getInput("* First Name: ");
+	this->lastName = getInput("* Last Name: ");
+	this->nickame = getInput("* Nickname: ");
 	this->phoneNumber = this->getPhoneNumber();
-	this->darkestSecret = getInput("Darkest Secret: ");
+	this->darkestSecret = getInput("* Darkest Secret: ");
 }
 
 std::string	Contact::formatString(std::string str) {
@@ -63,11 +63,11 @@ void	Contact::bookFormat(int index) {
 }
 
 void	Contact::displayContact(void) {
-	std::cout << "----------------------------------------" << std::endl;
-	std::cout << "First Name: " << this->firstName << std::endl;
-	std::cout << "Last Name: " << this->lastName << std::endl;
-	std::cout << "Nickname: " << this->nickame << std::endl;
-	std::cout << "Phone Number: " << this->phoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
-	std::cout << "----------------------------------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << "| First Name: " << this->firstName << std::endl;
+	std::cout << "| Last Name: " << this->lastName << std::endl;
+	std::cout << "| Nickname: " << this->nickame << std::endl;
+	std::cout << "| Phone Number: " << this->phoneNumber << std::endl;
+	std::cout << "| Darkest Secret: " << this->darkestSecret << std::endl;
+	std::cout << std::endl;
 }

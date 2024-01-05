@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/04 18:53:59 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:06:35 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	PhoneBook::addContact(void) {
 	
 	this->contacts[this->index] = newContact;
 	this->index++;
-	std::cout << "Contact added!" << std::endl;
+	std::cout << "\033[92mContact added!\033[39m" << std::endl;
 }
 
 void	PhoneBook::commandList(void) {
-	std::cout << "Available Commands:" << std::endl;
-	std::cout << "ADD -  Save a new contact" << std::endl;
-	std::cout << "SEARCH -  Display a specific contact" << std::endl;
-	std::cout << "EXIT -  Close the phonebook" << std::endl;
+	std::cout << "\033[30m\033[107m" << " Available Commands:                  " << "\033[39m\033[49m" << std::endl;
+	std::cout << "\033[30m\033[107m" << " ADD     - Save a new contact         " << "\033[39m\033[49m" << std::endl;
+	std::cout << "\033[30m\033[107m" << " SEARCH  - Display a specific contact " << "\033[39m\033[49m" << std::endl;
+	std::cout << "\033[30m\033[107m" << " EXIT    - Close the phonebook        " << "\033[39m\033[49m" << std::endl;
 }
 
 void	PhoneBook::displayPhoneBook(void) {
@@ -55,12 +55,17 @@ void	PhoneBook::displayPhoneBook(void) {
 void	PhoneBook::searchContact(void) {
 	int	index = -1;
 	this->displayPhoneBook();
-	std::cout << "Enter the contact index: ";
+	std::cout << ">> Enter the contact index: ";
 	std::cin >> index;
-	if (std::cin.good() && index < 8 && index >= 0)
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		std::exit(0);
+	}
+	else if (std::cin.good() && index < 8 && index >= 0)
 		this->contacts[index].displayContact();
 	else
-		std::cout << "Invalid contact index." << std::endl << std::flush;
+		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
 	std::cin.clear();
 	std::cin.ignore();
 }
