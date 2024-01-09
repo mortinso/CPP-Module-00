@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:37:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/04 18:37:19 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:29:49 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 # include "utils.hpp"
 
 class Contact {
