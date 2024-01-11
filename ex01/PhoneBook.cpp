@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/05 17:06:35 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:30:01 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ PhoneBook::~PhoneBook(void) {
 
 void	PhoneBook::addContact(void) {
 	Contact newContact;
-	
+
 	if (this->index == 8)
 		this->index = 0;
-	
+
 	newContact.createContact();
-	
+
 	this->contacts[this->index] = newContact;
 	this->index++;
 	std::cout << "\033[92mContact added!\033[39m" << std::endl;

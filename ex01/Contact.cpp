@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/05 17:07:48 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:29:18 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Contact::~Contact(void) {
 std::string	Contact::getPhoneNumber(void) {
 	std::string phoneNumber = "";
 	bool valid = false;
-	
+
 	while (!valid)
 	{
 		phoneNumber = getInput("* Phone Number: ");
