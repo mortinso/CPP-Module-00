@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/11 15:29:18 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:22:11 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,18 @@ std::string	Contact::formatString(std::string str) {
 void	Contact::bookFormat(int index) {
 	if (this->firstName.empty())
 		return ;
-	std::cout << std::setw(10) << index;
+	std::cout << std::setw(10) << index + 1;
 	std::cout << "|" << std::setw(10) << this->formatString(this->firstName);
 	std::cout << "|" << std::setw(10) << this->formatString(this->lastName);
 	std::cout << "|" << std::setw(10) << this->formatString(this->nickame) << std::endl;
 }
 
 void	Contact::displayContact(void) {
+	if (!this->firstName[0])
+	{
+		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
+		return ;
+	}
 	std::cout << std::endl;
 	std::cout << "| First Name: " << this->firstName << std::endl;
 	std::cout << "| Last Name: " << this->lastName << std::endl;

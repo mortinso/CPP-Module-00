@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:44:34 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/04 18:55:25 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:43:17 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main(void)
 		std::cin >> input;
 		if (std::cin.eof())
 		{
-            std::cout << std::endl;
-            return (1);
-        }
+			std::cout << std::endl;
+			return (1);
+		}
 		if (input.compare("ADD") == 0)
 			phoneBook.addContact();
 		else if (input.compare("SEARCH") == 0)
@@ -35,9 +35,3 @@ int	main(void)
 	}
 	return (0);
 }
-
-//	To do:
-//	- further debugging
-//	- putting the commands list inside a table of sorts
-//	- error messages in red(?)
-//	- better formatting of the phonebook list(?)
