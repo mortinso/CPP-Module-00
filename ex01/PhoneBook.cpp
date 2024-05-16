@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 16:49:15 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:54:22 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	PhoneBook::addContact(void) {
 
 	if (this->index == 8)
 	{
-		std::cout << "\033[103mMax number of contacts reached. Replacing oldest contact.\033[49m" << std::endl;
+		std::cout << "\033[93mMax number of contacts reached. Replacing oldest contact.\033[39m" << std::endl;
 		this->index = 0;
 	}
 
