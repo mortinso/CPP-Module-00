@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 12:44:02 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/16 15:38:15 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,14 @@ void	PhoneBook::searchContact(void) {
 	{
 		std::cout << std::endl;
 		std::exit(0);
+	}
+	std::cin.clear();
+	if (std::cin.peek() != '\n')
+	{
+		std::string extra = "";
+		getline(std::cin, extra);
+		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
+		return ;
 	}
 	else if (std::cin.good() && index <= 8 && index > 0)
 		this->contacts[index - 1].displayContact();

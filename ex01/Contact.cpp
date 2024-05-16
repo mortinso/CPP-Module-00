@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 12:22:11 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/16 15:52:03 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,12 @@ std::string	Contact::getPhoneNumber(void) {
 	return (phoneNumber);
 }
 
+/* To remove the strict phone number checker, replace:
+		this->phoneNumber = this->getPhoneNumber();
+	With:
+		this->phoneNumber = getInput("* Phone Number: ");
+ */
 void	Contact::createContact(void) {
-	std::cin.ignore();
 	std::cout << ">> Creating Contact, please fill in the following fields:" << std::endl;
 	this->firstName = getInput("* First Name: ");
 	this->lastName = getInput("* Last Name: ");
