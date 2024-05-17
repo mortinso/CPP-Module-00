@@ -26,7 +26,7 @@ int	main(void)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl;
-			exit (1);
+			break;
 		}
 
 		if (input.compare("ADD") == 0)
