@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:44:34 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 14:08:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:27:46 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ int	main(void)
 			std::cout << std::endl;
 			break;
 		}
-
 		if (input.compare("ADD") == 0)
 			phoneBook.addContact();
 		else if (input.compare("SEARCH") == 0)
 			phoneBook.searchContact();
 		else if (input.compare("EXIT") == 0)
-			break;
+			break ;
+		if (std::cin.eof())
+			break ;
 	}
 	return (0);
 }

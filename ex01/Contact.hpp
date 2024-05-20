@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:37:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 15:49:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:44:28 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,33 @@
 # include <iostream>
 # include <iomanip>
 # include <cstdlib>
-# include "utils.hpp"
 
 class Contact {
 	private:
 		std::string	firstName;
 		std::string	lastName;
-		std::string	nickame;
+		std::string	nickname;
 		std::string	phoneNumber;
 		std::string	darkestSecret;
 
 	public:
+		// Constructors
 		Contact(void);
+
+		// Destructors
 		~Contact(void);
-		std::string	getPhoneNumber(void);
-		void	createContact(void);
+
+		// setters
+		void setFirstName(std::string _firstName);
+		void setLastName(std::string _lastName);
+		void setNickname(std::string _nickname);
+		void setPhoneNumber(std::string _phoneNumber);
+		void setDarkestSecret(std::string _darkestSecret);
+
+		//getters
+		std::string getFirstName( void );
+
+		// methods
 		std::string	formatString(std::string str);
 		void	bookFormat(int index);
 		void	displayContact(void);

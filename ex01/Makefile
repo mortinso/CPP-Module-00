@@ -1,7 +1,7 @@
 NAME = phonebook
 
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g -std=c++98 #-fsanitize=address
 
 OBJ_DIR = .objs
 
@@ -31,6 +31,6 @@ fclean: clean
 re: fclean all
 
 val: all
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./phonebook
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./phonebook
 
 .PHONY: all clean fclean re val

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 16:54:22 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:42:07 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,26 @@ PhoneBook::~PhoneBook(void) {
 	// std::cout << "PhoneBook: Destructor called" << std::endl;
 }
 
+/* std::string	PhoneBook::getPhoneNumber(void) {
+	std::string phoneNumber = "";
+	bool valid = false;
+
+	while (!valid)
+	{
+		phoneNumber = getInput("* Phone Number: ");
+		if (isValidPhoneNumber(phoneNumber))
+			valid = true;
+		else
+			std::cout << "\033[91mInvalid phone number, try again.\033[39m" << std::endl;
+	}
+	return (phoneNumber);
+} */
+
+// To remove the strict phone number checker, replace:
+// 		this->phoneNumber = this->getPhoneNumber();
+// 	With:
+// 		this->phoneNumber = getInput("* Phone Number: ");
+
 void	PhoneBook::addContact(void) {
 	Contact newContact;
 
@@ -30,7 +50,27 @@ void	PhoneBook::addContact(void) {
 		this->index = 0;
 	}
 
-	newContact.createContact();
+	std::cout << ">> Creating Contact, please fill in the following fields:" << std::endl << std::flush;
+
+	newContact.setFirstName(getInput("* First Name: "));
+	if (std::cin.eof())
+		return ;
+
+	newContact.setLastName(getInput("* Last Name: "));
+	if (std::cin.eof())
+		return ;
+
+	newContact.setNickname(getInput("* Nickname: "));
+	if (std::cin.eof())
+		return ;
+
+	newContact.setPhoneNumber(getInput("* Phone Number: "));
+	if (std::cin.eof())
+		return ;
+
+	newContact.setDarkestSecret(getInput("* Darkest Secret: "));
+	if (std::cin.eof())
+		return ;
 
 	this->contacts[this->index] = newContact;
 	this->index++;
@@ -55,6 +95,28 @@ void	PhoneBook::displayPhoneBook(void) {
 	std::cout << "-------------------------------------------" << std::endl;
 }
 
+/* int PhoneBook::getIndex( void )
+{
+	int	index;
+	std::string input;
+
+	while (true)
+	{
+		index = -1;
+
+		input = getInput(">> Enter the contact index: ");
+
+		index = std::atoi(input.c_str()) - 1;
+
+		if (input.length() == 1 && input[0] >= '1' && input[0] <= '8'
+			&& this->contacts[index].getFirstName() != "")
+			return (index);
+
+		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
+		input.clear();
+	}
+}
+ */
 void	PhoneBook::searchContact(void) {
 	int	index = -1;
 	this->displayPhoneBook();

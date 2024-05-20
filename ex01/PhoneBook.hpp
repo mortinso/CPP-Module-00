@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:38:06 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:29:45 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:42:11 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,18 @@ class PhoneBook {
 		int	index;
 
 	public:
+		// Constructors
 		PhoneBook(void);
+
+		// Destructors
 		~PhoneBook(void);
-		void	addContact(void);
-		void	commandList(void);
-		void	displayPhoneBook(void);
-		void	searchContact(void);
+
+		// methods
+		//std::string	getPhoneNumber(void);
+		void		addContact(void);
+		void		commandList(void);
+		void		displayPhoneBook(void);
+		void		searchContact(void);
 };
 
 #endif

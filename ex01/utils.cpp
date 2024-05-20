@@ -6,46 +6,38 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:35:15 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/16 15:50:35 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:39:41 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
 std::string getInput(const std::string prompt) {
-	std::string input = "";
-	bool valid = false;
+	std::string input;
 
-	while (!valid)
+	while (true)
 	{
 		std::cout << prompt;
+		std::cin.clear();
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
+			input.clear();
 			std::cout << std::endl;
-			std::exit(0);
+			return ("");
 		}
-		if (std::cin.good() && !input.empty() && !isAllWhitespaces(input))
-			valid = true;
-		else
-		{
-			std::cin.clear();
-			std::cout << "\033[91mInvalid input, try again.\033[39m" << std::endl;
-		}
+		if (!input.empty() && !isAllWhitespaces(input))
+			return (input);
+		std::cout << "\033[91mInvalid input, try again.\033[39m" << std::endl << std::flush;
 	}
-	return (input);
 }
 
 bool	isAllWhitespaces(const std::string str)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
+	for (size_t i = 0; str[i]; i++)
 	{
 		if (!std::isspace(str[i]))
 			return (false);
-		i++;
 	}
 	return (true);
 }
