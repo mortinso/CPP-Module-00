@@ -16,6 +16,6 @@ clean:
 re: clean all
 
 val: all
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./phonebook
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./megaphone
 
 .PHONY: all clean re val
