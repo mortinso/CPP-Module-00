@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:35:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/20 13:39:59 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:10:27 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	Contact::bookFormat(int index) {
 void	Contact::displayContact(void) {
 	if (!this->firstName[0])
 	{
-		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
+		std::cout << "\033[91mInvalid contact index.\033[0m" << std::endl << std::flush;
 		return ;
 	}
 	std::cout << std::endl;

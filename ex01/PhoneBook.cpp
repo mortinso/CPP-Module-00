@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:39:47 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/20 13:42:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:10:12 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	PhoneBook::addContact(void) {
 
 	if (this->index == 8)
 	{
-		std::cout << "\033[93mMax number of contacts reached. Replacing oldest contact.\033[39m" << std::endl;
+		std::cout << "\033[93mMax number of contacts reached. Replacing oldest contact.\033[0m" << std::endl;
 		this->index = 0;
 	}
 
@@ -74,14 +74,14 @@ void	PhoneBook::addContact(void) {
 
 	this->contacts[this->index] = newContact;
 	this->index++;
-	std::cout << "\033[92mContact added!\033[39m" << std::endl;
+	std::cout << "\033[92mContact added!\033[0m" << std::endl;
 }
 
 void	PhoneBook::commandList(void) {
-	std::cout << "\033[30m\033[107m" << " Available Commands:                  " << "\033[39m\033[49m" << std::endl;
-	std::cout << "\033[30m\033[107m" << " ADD     - Save a new contact         " << "\033[39m\033[49m" << std::endl;
-	std::cout << "\033[30m\033[107m" << " SEARCH  - Display a specific contact " << "\033[39m\033[49m" << std::endl;
-	std::cout << "\033[30m\033[107m" << " EXIT    - Close the phonebook        " << "\033[39m\033[49m" << std::endl;
+	std::cout << "\033[30m\033[107m Available Commands:                  \033[0m" << std::endl;
+	std::cout << "\033[30m\033[107m ADD     - Save a new contact         \033[0m" << std::endl;
+	std::cout << "\033[30m\033[107m SEARCH  - Display a specific contact \033[0m" << std::endl;
+	std::cout << "\033[30m\033[107m EXIT    - Close the phonebook        \033[0m" << std::endl;
 }
 
 void	PhoneBook::displayPhoneBook(void) {
@@ -95,50 +95,33 @@ void	PhoneBook::displayPhoneBook(void) {
 	std::cout << "-------------------------------------------" << std::endl;
 }
 
-/* int PhoneBook::getIndex( void )
-{
+void	PhoneBook::searchContact(void) {
 	int	index;
 	std::string input;
+
+	if (this->contacts[0].getFirstName() == "")
+	{
+		std::cout << "\033[91mNo contacts to display.\033[0m" << std::endl;
+		return ;
+	}
 
 	while (true)
 	{
 		index = -1;
+		displayPhoneBook();
 
 		input = getInput(">> Enter the contact index: ");
+		if (std::cin.eof())
+			return ;
 
 		index = std::atoi(input.c_str()) - 1;
 
 		if (input.length() == 1 && input[0] >= '1' && input[0] <= '8'
 			&& this->contacts[index].getFirstName() != "")
-			return (index);
+			break;
 
-		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
+		std::cout << "\033[91mInvalid contact index, try again.\033[0m" << std::endl << std::flush;
 		input.clear();
 	}
-}
- */
-void	PhoneBook::searchContact(void) {
-	int	index = -1;
-	this->displayPhoneBook();
-	std::cout << ">> Enter the contact index: ";
-	std::cin >> index;
-	if (std::cin.eof())
-	{
-		std::cout << std::endl;
-		std::exit(0);
-	}
-	std::cin.clear();
-	if (std::cin.peek() != '\n')
-	{
-		std::string extra = "";
-		getline(std::cin, extra);
-		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
-		return ;
-	}
-	else if (std::cin.good() && index <= 8 && index > 0)
-		this->contacts[index - 1].displayContact();
-	else
-		std::cout << "\033[91mInvalid contact index.\033[39m" << std::endl << std::flush;
-	std::cin.clear();
-	std::cin.ignore();
+	this->contacts[index].displayContact();
 }

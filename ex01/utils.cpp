@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:35:15 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/20 13:39:41 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:10:34 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ std::string getInput(const std::string prompt) {
 		}
 		if (!input.empty() && !isAllWhitespaces(input))
 			return (input);
-		std::cout << "\033[91mInvalid input, try again.\033[39m" << std::endl << std::flush;
+		std::cout << "\033[91mInvalid input, try again.\033[0m" << std::endl << std::flush;
 	}
 }
 

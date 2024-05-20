@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:44:34 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/20 13:27:46 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:07:36 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main(void)
 {
 	PhoneBook phoneBook;
-	std::string input = "";
+	std::string input;
 
 	while (true)
 	{
